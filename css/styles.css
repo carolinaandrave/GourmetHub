@@ -242,7 +242,8 @@ footer p {
     }
 }
 
-    /* Formulario de registro */
+/* Formulario de registro */
+
 .pagina-formulario {
     min-height: 80vh;
     padding: 60px 20px;
@@ -625,4 +626,53 @@ fieldset.grupo-formulario {
     color: #6e625a;
     font-size: 14px;
     text-align: right;
+}
+
+/* Catálogo de productos */
+
+.catalogo-productos {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 25px;
+}
+
+.catalogo-productos h2 {
+    margin-bottom: 30px;
+    color: #542f1f;
+    font-size: 32px;
+    text-align: center;
+}
+
+.catalogo-productos .tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo-productos .tarjeta-producto p {
+    margin-bottom: 15px;
+}
+
+.catalogo-productos .tarjeta-producto .precio {
+    margin-top: auto;
+}
+
+.catalogo-productos .tarjeta-producto .boton {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.catalogo-productos button.boton {
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 600px) {
+    .catalogo-productos {
+        padding: 35px 15px;
+    }
+
+    .catalogo-productos h2 {
+        font-size: 27px;
+    }
 }
