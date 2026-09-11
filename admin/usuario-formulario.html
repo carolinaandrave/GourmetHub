@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario de usuario | Gourmet Hub</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="pagina-administracion">
+
+    <aside class="menu-administracion">
+        <a href="inicio-admin.html" class="logo-admin">
+            Gourmet Hub
+        </a>
+
+        <p class="perfil-admin">Panel de administración</p>
+
+        <nav>
+            <ul>
+                <li><a href="inicio-admin.html">Inicio</a></li>
+                <li><a href="productos-admin.html">Productos</a></li>
+
+                <li>
+                    <a href="producto-formulario.html">
+                        Nuevo producto
+                    </a>
+                </li>
+
+                <li><a href="usuarios-admin.html">Usuarios</a></li>
+
+                <li>
+                    <a href="usuario-formulario.html">
+                        Nuevo usuario
+                    </a>
+                </li>
+
+                <li><a href="../index.html">Volver a la tienda</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="contenido-administracion">
+
+        <header class="encabezado-administracion">
+            <div>
+                <h1 id="titulo-formulario-usuario">
+                    Crear usuario
+                </h1>
+
+                <p>Completa la información del usuario.</p>
+            </div>
+
+            <a href="usuarios-admin.html" class="boton">
+                Volver al listado
+            </a>
+        </header>
+
+        <section class="contenedor-formulario formulario-admin">
+
+            <form id="formulario-usuario" novalidate>
+
+                <input type="hidden" id="usuario-id">
+
+                <div class="grupo-formulario">
+                    <label for="run-usuario">RUN *</label>
+
+                    <input
+                        type="text"
+                        id="run-usuario"
+                        minlength="7"
+                        maxlength="9"
+                        placeholder="Ejemplo: 19011022K"
+                    >
+
+                    <p class="sugerencia">
+                        Escribe el RUN sin puntos ni guion.
+                    </p>
+
+                    <small
+                        id="error-run-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="nombre-usuario">Nombre *</label>
+
+                    <input
+                        type="text"
+                        id="nombre-usuario"
+                        maxlength="50"
+                        autocomplete="given-name"
+                        placeholder="Nombre"
+                    >
+
+                    <small
+                        id="error-nombre-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="apellidos-usuario">
+                        Apellidos *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="apellidos-usuario"
+                        maxlength="100"
+                        autocomplete="family-name"
+                        placeholder="Apellidos"
+                    >
+
+                    <small
+                        id="error-apellidos-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="correo-usuario">
+                        Correo electrónico *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo-usuario"
+                        maxlength="100"
+                        autocomplete="email"
+                        placeholder="usuario@gmail.com"
+                    >
+
+                    <small
+                        id="error-correo-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="fecha-usuario">
+                        Fecha de nacimiento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha-usuario"
+                        autocomplete="bday"
+                    >
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="tipo-usuario">
+                        Tipo de usuario *
+                    </label>
+
+                    <select id="tipo-usuario">
+                        <option value="">
+                            Seleccione un perfil
+                        </option>
+
+                        <option value="Administrador">
+                            Administrador
+                        </option>
+
+                        <option value="Vendedor">
+                            Vendedor
+                        </option>
+
+                        <option value="Cliente">
+                            Cliente
+                        </option>
+                    </select>
+
+                    <small
+                        id="error-tipo-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="region-usuario">Región *</label>
+
+                    <select id="region-usuario">
+                        <option value="">
+                            Seleccione una región
+                        </option>
+                    </select>
+
+                    <small
+                        id="error-region-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="comuna-usuario">Comuna *</label>
+
+                    <select id="comuna-usuario" disabled>
+                        <option value="">
+                            Primero seleccione una región
+                        </option>
+                    </select>
+
+                    <small
+                        id="error-comuna-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="direccion-usuario">
+                        Dirección *
+                    </label>
+
+                    <textarea
+                        id="direccion-usuario"
+                        maxlength="300"
+                        rows="4"
+                        placeholder="Dirección del usuario"
+                    ></textarea>
+
+                    <small
+                        id="error-direccion-usuario"
+                        class="mensaje-error">
+                    </small>
+                </div>
+
+                <button type="submit" class="boton boton-enviar">
+                    Guardar usuario
+                </button>
+
+                <p
+                    id="mensaje-formulario-usuario"
+                    class="mensaje-exito">
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="../js/admin-usuarios.js"></script>
+</body>
+
+</html>

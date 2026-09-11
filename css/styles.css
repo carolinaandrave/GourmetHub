@@ -1126,3 +1126,34 @@ fieldset.grupo-formulario {
         padding: 10px 8px;
     }
 }
+
+/* Formularios administrativos */
+
+.formulario-admin {
+    max-width: 800px;
+}
+
+.grupo-formulario input[type="number"],
+.grupo-formulario input[type="date"],
+.grupo-formulario input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a99b92;
+    border-radius: 6px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.grupo-formulario input[type="number"]:focus,
+.grupo-formulario input[type="date"]:focus,
+.grupo-formulario input[type="file"]:focus {
+    border-color: #c96a32;
+    outline: 2px solid rgba(201, 106, 50, 0.20);
+}
+
+.grupo-formulario select:disabled {
+    background-color: #eeeeee;
+    color: #777777;
+    cursor: not-allowed;
+}
