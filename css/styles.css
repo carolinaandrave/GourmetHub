@@ -749,3 +749,143 @@ fieldset.grupo-formulario {
         font-size: 27px;
     }
 }
+
+/* Carrito de compras */
+
+.seccion-carrito {
+    max-width: 1100px;
+    min-height: 500px;
+    margin: auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.producto-carrito {
+    margin-bottom: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 25px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.producto-carrito img {
+    width: 180px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.informacion-producto-carrito h2 {
+    margin-bottom: 10px;
+    color: #542f1f;
+    font-size: 23px;
+}
+
+.informacion-producto-carrito p {
+    margin-bottom: 8px;
+}
+
+.controles-cantidad {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.controles-cantidad button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c96a32;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.controles-cantidad button:hover {
+    background-color: #a94f20;
+}
+
+.controles-cantidad span {
+    min-width: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.resumen-carrito {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.resumen-carrito h2 {
+    margin-bottom: 18px;
+    color: #542f1f;
+}
+
+.resumen-carrito p {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.resumen-carrito .boton {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.boton-eliminar-carrito {
+    background-color: #a62929;
+}
+
+.boton-eliminar-carrito:hover {
+    background-color: #7c1717;
+}
+
+.carrito-vacio {
+    padding: 40px 20px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.carrito-vacio h2 {
+    margin-bottom: 10px;
+    color: #542f1f;
+}
+
+.carrito-vacio p {
+    margin-bottom: 25px;
+}
+
+/* Carrito adaptado para teléfonos */
+
+@media (max-width: 800px) {
+    .seccion-carrito {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .seccion-carrito {
+        padding: 35px 12px;
+    }
+
+    .producto-carrito {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-carrito img {
+        width: 100%;
+        height: 220px;
+    }
+}

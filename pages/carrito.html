@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito de compras | Gourmet Hub</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="menu">
+            <a href="../index.html" class="logo">Gourmet Hub</a>
+
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Ingresar</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+
+                <li>
+                    <a href="carrito.html">
+                        Carrito
+                        <span id="cantidad-carrito">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="encabezado-pagina">
+            <h1>Carrito de compras</h1>
+
+            <p>
+                Revisa los productos seleccionados y el total de tu compra.
+            </p>
+        </section>
+
+        <section class="seccion-carrito">
+
+            <!-- JavaScript mostrará aquí los productos guardados. -->
+            <div id="productos-carrito"></div>
+
+            <aside id="resumen-carrito" class="resumen-carrito">
+                <h2>Resumen de compra</h2>
+
+                <p>
+                    Total:
+                    <strong id="total-carrito">$0</strong>
+                </p>
+
+                <button
+                    type="button"
+                    id="vaciar-carrito"
+                    class="boton boton-eliminar-carrito">
+                    Vaciar carrito
+                </button>
+
+                <a href="productos.html" class="boton">
+                    Seguir comprando
+                </a>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Gourmet Hub</p>
+        <p>Productos gastronómicos y talleres de cocina.</p>
+        <p>Contacto: contacto@gourmethub.cl</p>
+        <p>&copy; 2026 Gourmet Hub. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../js/carrito.js"></script>
+</body>
+
+</html>
