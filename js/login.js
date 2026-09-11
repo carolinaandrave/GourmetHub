@@ -83,9 +83,15 @@ formularioLogin.addEventListener("submit", function (evento) {
     }
 
     if (formularioValido) {
-        mensajeLogin.textContent =
-            "Inicio de sesión realizado correctamente.";
+    mensajeLogin.textContent =
+        "Inicio de sesión realizado correctamente.";
 
-        formularioLogin.reset();
-    }
+    formularioLogin.reset();
+
+    // Espera un segundo y abre el panel administrativo
+    setTimeout(function () {
+        window.location.href =
+            "../admin/inicio-admin.html";
+    }, 1000);
+}
 });
