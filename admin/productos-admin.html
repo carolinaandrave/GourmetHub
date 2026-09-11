@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrar productos | Gourmet Hub</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="pagina-administracion">
+
+    <aside class="menu-administracion">
+        <a href="inicio-admin.html" class="logo-admin">
+            Gourmet Hub
+        </a>
+
+        <p class="perfil-admin">Panel de administración</p>
+
+        <nav>
+            <ul>
+                <li><a href="inicio-admin.html">Inicio</a></li>
+                <li><a href="productos-admin.html">Productos</a></li>
+
+                <li>
+                    <a href="producto-formulario.html">
+                        Nuevo producto
+                    </a>
+                </li>
+
+                <li><a href="usuarios-admin.html">Usuarios</a></li>
+
+                <li>
+                    <a href="usuario-formulario.html">
+                        Nuevo usuario
+                    </a>
+                </li>
+
+                <li><a href="../index.html">Volver a la tienda</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="contenido-administracion">
+
+        <header class="encabezado-administracion">
+            <div>
+                <h1>Administrar productos</h1>
+                <p>Listado de productos disponibles en Gourmet Hub.</p>
+            </div>
+
+            <a href="producto-formulario.html" class="boton">
+                Crear producto
+            </a>
+        </header>
+
+        <section class="contenedor-tabla">
+
+            <table class="tabla-administracion">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Categoría</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                
+                <tbody id="tabla-productos-admin"></tbody>
+            </table>
+
+            <p
+                id="mensaje-productos-admin"
+                class="mensaje-exito">
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../js/admin-productos.js"></script>
+</body>
+
+</html>

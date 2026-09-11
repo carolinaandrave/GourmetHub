@@ -889,3 +889,240 @@ fieldset.grupo-formulario {
         height: 220px;
     }
 }
+
+/* Área administrativa */
+
+.pagina-administracion {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    background-color: #f5eadc;
+}
+
+.menu-administracion {
+    min-height: 100vh;
+    padding: 30px 20px;
+    background-color: #34271f;
+    color: white;
+}
+
+.logo-admin {
+    display: block;
+    margin-bottom: 8px;
+    color: #f4c76d;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.perfil-admin {
+    margin-bottom: 30px;
+    color: #ddd0c7;
+    font-size: 14px;
+}
+
+.menu-administracion ul {
+    list-style: none;
+}
+
+.menu-administracion li {
+    margin-bottom: 10px;
+}
+
+.menu-administracion a {
+    display: block;
+    padding: 11px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-administracion nav a:hover {
+    background-color: #c96a32;
+}
+
+.contenido-administracion {
+    padding: 35px;
+}
+
+.encabezado-administracion {
+    margin-bottom: 30px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.encabezado-administracion h1 {
+    color: #542f1f;
+}
+
+.bienvenida-administracion {
+    margin-bottom: 30px;
+    padding: 25px;
+    border-left: 5px solid #c96a32;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.bienvenida-administracion h2 {
+    margin-bottom: 8px;
+    color: #542f1f;
+}
+
+.resumen-administracion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tarjeta-resumen {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.tarjeta-resumen h2 {
+    color: #542f1f;
+}
+
+.numero-resumen {
+    margin: 15px 0;
+    color: #c96a32;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.tarjeta-resumen .boton {
+    margin-top: 20px;
+}
+
+/* Administración adaptada a pantallas pequeñas */
+
+@media (max-width: 900px) {
+    .pagina-administracion {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-administracion {
+        min-height: auto;
+    }
+
+    .menu-administracion ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .menu-administracion li {
+        margin-bottom: 0;
+    }
+
+    .resumen-administracion {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenido-administracion {
+        padding: 18px;
+    }
+
+    .encabezado-administracion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* Tablas del área administrativa */
+
+.contenedor-tabla {
+    padding: 25px;
+    overflow-x: auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.tabla-administracion {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.tabla-administracion th,
+.tabla-administracion td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ded5cf;
+    text-align: left;
+}
+
+.tabla-administracion th {
+    background-color: #542f1f;
+    color: white;
+}
+
+.tabla-administracion tbody tr:hover {
+    background-color: #fff8ee;
+}
+
+.estado-disponible,
+.estado-critico {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.estado-disponible {
+    background-color: #d9f2df;
+    color: #176331;
+}
+
+.estado-critico {
+    background-color: #ffe0e0;
+    color: #9c1c1c;
+}
+
+.boton-tabla {
+    display: inline-block;
+    margin: 3px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton-editar {
+    background-color: #ad6a22;
+}
+
+.boton-editar:hover {
+    background-color: #875017;
+}
+
+.boton-borrar {
+    background-color: #a62929;
+}
+
+.boton-borrar:hover {
+    background-color: #7c1717;
+}
+
+@media (max-width: 600px) {
+    .contenedor-tabla {
+        padding: 12px;
+    }
+
+    .tabla-administracion th,
+    .tabla-administracion td {
+        padding: 10px 8px;
+    }
+}
