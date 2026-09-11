@@ -1,6 +1,8 @@
-// Obtiene el carrito guardado en el navegador
+// Recupera el carrito guardado en el navegador
 function obtenerCarrito() {
-    const carritoGuardado = localStorage.getItem("carritoGourmet");
+    const carritoGuardado = localStorage.getItem(
+        "carritoGourmetHub"
+    );
 
     if (carritoGuardado === null) {
         return [];
@@ -9,56 +11,70 @@ function obtenerCarrito() {
     return JSON.parse(carritoGuardado);
 }
 
-// Guarda el carrito para que no se pierda al cambiar de página
+// Guarda el carrito actualizado en localStorage
 function guardarCarrito(carrito) {
     localStorage.setItem(
-        "carritoGourmet",
+        "carritoGourmetHub",
         JSON.stringify(carrito)
     );
 }
 
-// Actualiza la cantidad mostrada junto al enlace Carrito
-function actualizarCantidadCarrito() {
-    const carrito = obtenerCarrito();
-    const contador = document.getElementById("cantidad-carrito");
-
-    let cantidadTotal = 0;
-
-    carrito.forEach(function (producto) {
-        cantidadTotal = cantidadTotal + producto.cantidad;
-    });
+// Actualiza el número mostrado junto al enlace del carrito
+function actualizarContadorCarrito() {
+    const contador = document.getElementById(
+        "cantidad-carrito"
+    );
 
     if (contador !== null) {
+        const carrito = obtenerCarrito();
+        let cantidadTotal = 0;
+
+        carrito.forEach(function (producto) {
+            cantidadTotal =
+                cantidadTotal + producto.cantidad;
+        });
+
         contador.textContent = cantidadTotal;
     }
 }
 
-// Añade un producto o aumenta su cantidad
-function agregarAlCarrito(producto) {
+// Agrega un producto o aumenta su cantidad
+function agregarAlCarrito(idProducto) {
+    const productoSeleccionado =
+        listaProductos.find(function (producto) {
+            return producto.id === idProducto;
+        });
+
+    if (productoSeleccionado === undefined) {
+        alert("No se pudo encontrar el producto.");
+        return;
+    }
+
     const carrito = obtenerCarrito();
 
-    const productoExistente = carrito.find(function (item) {
-        return item.id === producto.id;
-    });
+    const productoEnCarrito =
+        carrito.find(function (producto) {
+            return producto.id === idProducto;
+        });
 
-    if (productoExistente === undefined) {
+    if (productoEnCarrito === undefined) {
         carrito.push({
-            id: producto.id,
-            nombre: producto.nombre,
-            precio: producto.precio,
-            imagen: producto.imagen,
+            id: productoSeleccionado.id,
+            nombre: productoSeleccionado.nombre,
+            precio: productoSeleccionado.precio,
+            imagen: productoSeleccionado.imagen,
             cantidad: 1
         });
     } else {
-        productoExistente.cantidad =
-            productoExistente.cantidad + 1;
+        productoEnCarrito.cantidad =
+            productoEnCarrito.cantidad + 1;
     }
 
     guardarCarrito(carrito);
-    actualizarCantidadCarrito();
+    actualizarContadorCarrito();
 
-    alert("Producto añadido al carrito.");
+    alert("Producto agregado correctamente al carrito.");
 }
 
-// Muestra el número de productos cuando carga la página
-actualizarCantidadCarrito();
+// Actualiza el contador al cargar la página
+actualizarContadorCarrito();

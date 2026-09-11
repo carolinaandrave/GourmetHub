@@ -1,4 +1,4 @@
-// Contiene la información de los productos
+// Arreglo con la información de los productos
 const listaProductos = [
     {
         id: 1,
@@ -23,11 +23,11 @@ const listaProductos = [
     }
 ];
 
-// Se obtiene el contenedor donde aparecerán los productos
+// Busca el lugar donde se mostrarán los productos
 const contenedorProductos =
     document.getElementById("lista-productos");
 
-// recorre el arreglo y crea una tarjeta por producto
+// Crea una tarjeta para cada producto del arreglo
 function mostrarProductos() {
     contenedorProductos.innerHTML = "";
 
@@ -59,20 +59,17 @@ function mostrarProductos() {
             <button
                 type="button"
                 class="boton"
-                data-id="${producto.id}"
+                onclick="agregarAlCarrito(${producto.id})"
             >
                 Añadir al carrito
             </button>
         `;
 
-        const botonAgregar = tarjeta.querySelector("button");
-
-        botonAgregar.addEventListener("click", function () {
-            agregarAlCarrito(producto);
-        });
-
         contenedorProductos.appendChild(tarjeta);
     });
 }
 
-mostrarProductos();
+// Solo muestra el catálogo si su contenedor existe
+if (contenedorProductos !== null) {
+    mostrarProductos();
+}
